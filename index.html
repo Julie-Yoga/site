@@ -541,13 +541,24 @@
   Julie Lobel ©2026 · SIRET 813 800 398 00048 · APE 8690F
 </footer>
 
- <script>
+<script>
 const cursor = document.querySelector('.cursor');
 
+let x = 0;
+let y = 0;
+
 window.addEventListener('mousemove', e => {
-  cursor.style.top = e.clientY + 'px';
-  cursor.style.left = e.clientX + 'px';
+  x = e.clientX;
+  y = e.clientY;
 });
+
+function animate() {
+  cursor.style.left = x + 'px';
+  cursor.style.top = y + 'px';
+  requestAnimationFrame(animate);
+}
+
+animate();
 </script>
  
 </body>
