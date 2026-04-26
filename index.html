@@ -168,10 +168,28 @@
     .cta-final { padding: 2.5rem 1.1rem; }
     .rdv-urgent { flex-direction: column; align-items: flex-start; }
   }
+ body {
+  cursor: none;
+}
+
+.cursor {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #b76e79;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s ease;
+  z-index: 9999;
+}
 </style>
 </head>
 <body>
-
+<div class="cursor"></div>
+ 
 <header>
   <span class="header-name">Julie Lobel</span>
   <a href="https://www.resalib.fr/praticien/120874-julie-professeur-de-yoga-perpignan#newrdvmodal" class="header-cta">
@@ -523,5 +541,14 @@
   Julie Lobel ©2026 · SIRET 813 800 398 00048 · APE 8690F
 </footer>
 
+ <script>
+const cursor = document.querySelector('.cursor');
+
+window.addEventListener('mousemove', e => {
+  cursor.style.top = e.clientY + 'px';
+  cursor.style.left = e.clientX + 'px';
+});
+</script>
+ 
 </body>
 </html>
