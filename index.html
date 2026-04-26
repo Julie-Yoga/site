@@ -506,7 +506,7 @@
   <a class="cta-final-btn" href="mailto:julielobel.coaching@gmail.com">Je suis disponible →</a>
 </div>
 
-<div class="reveal"style="max-width:860px; margin:0 auto; padding: 1.8rem 1.25rem; border-top: 1px solid #ddd; display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+<div class="reveal" style="max-width:860px; margin:0 auto; padding: 1.8rem 1.25rem; border-top: 1px solid #ddd; display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
   
   <img src="20260419_135601.jpg"
        alt="Accessoires yoga Julie Lobel — Perpignan"
@@ -535,13 +535,20 @@
 <script>
 const elements = document.querySelectorAll('.reveal');
 
-function reveal() {
+function revealOnScroll() {
   elements.forEach(el => {
-    el.classList.add('visible');
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      el.classList.add('visible');
+    }
   });
 }
 
-window.onload = reveal;
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+// 🔥 LA LIGNE QUI CHANGE TOUT
+revealOnScroll();
 </script>
 
 </body>
