@@ -544,9 +544,22 @@
 <script>
 const cursor = document.querySelector('.cursor');
 
+// mouvement du curseur
 window.addEventListener('mousemove', e => {
   cursor.style.top = e.clientY + 'px';
   cursor.style.left = e.clientX + 'px';
+});
+
+// effet hover
+const hoverElements = document.querySelectorAll('a, button');
+
+hoverElements.forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+  });
 });
 </script>
  
