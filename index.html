@@ -533,5 +533,17 @@
   Julie Lobel ©2026 · SIRET 813 800 398 00048 · APE 8690F
 </footer>
 
+ <script>
+const elements = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      el.classList.add('visible');
+    }
+  });
+});
+</script>
 </body>
 </html>
