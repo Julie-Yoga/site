@@ -76,17 +76,8 @@
 
   /* FORMULES */
   .formules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.9rem; }
- .formule-card {
-  background:#fff;
-  color:var(--rose-d);
-  border: 1px solid var(--beige-d);
-  border-radius: 16px;
-  padding: 1.3rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* ← LA clé */
-  gap: 0.35rem;
-} .formule-card:hover { border-color: var(--rose); }
+  .formule-card { display: flex; flex-direction: column;}
+  .formule-card:hover { border-color: var(--rose); }
   .formule-card.vip { border: 2px solid var(--rose); }
   .vip-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--rose); color: #fff; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.8rem; border-radius: 40px; white-space: nowrap; }
   .formule-duration { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 300; color: #6B2D6B; }
