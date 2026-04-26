@@ -542,23 +542,16 @@
 </footer>
 
 <script>
-const cursor = document.querySelector('.cursor');
+const hoverElements = document.querySelectorAll('a, button');
 
-let x = 0;
-let y = 0;
-
-window.addEventListener('mousemove', e => {
-  x = e.clientX;
-  y = e.clientY;
+hoverElements.forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+  });
 });
-
-function animate() {
-  cursor.style.left = x + 'px';
-  cursor.style.top = y + 'px';
-  requestAnimationFrame(animate);
-}
-
-animate();
 </script>
  
 </body>
