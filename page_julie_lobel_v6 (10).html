@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Julie Lobel — Accompagnement holistique, coaching, yoga & hypnose | Perpignan & en ligne</title>
+<meta name="description" content="Julie Lobel, psychologue de formation, coach certifiée, professeure de yoga et praticienne en hypnose, EFT, breathwork. Consultations en visio ou téléphone. Perpignan.">
+<meta name="keywords" content="Julie Lobel, coaching holistique, yoga Nidra, hypnose, EFT, breathwork, sophrologie, accompagnement, Perpignan, consultation en ligne, bien-être, blocages, transformation">
+<meta name="author" content="Julie Lobel">
+<meta property="og:title" content="Julie Lobel — Accompagnement holistique & transformation">
+<meta property="og:description" content="Un regard clair sur ta situation. Psychologie clinique, yoga, hypnose, EFT, breathwork. En ligne ou à Perpignan.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<link rel="canonical" href="https://julielobel.fr/">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --rose: #B05490; --rose-l: #F5EAF7; --rose-d: #6B2D6B;
+    --beige: #FDFAFF; --beige-d: #EDE5F0;
+    --text: #241A2E; --muted: #7A6285;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; font-weight: 300; background: var(--beige); color: var(--text); }
+
+  /* HEADER */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(253,250,255,0.95); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--beige-d);
+    padding: 0.7rem 1.2rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 0.8rem;
+  }
+  .header-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; white-space: nowrap; }
+  .header-cta { display: flex; align-items: center; gap: 0.45rem; background: var(--rose); color: #fff; border-radius: 40px; padding: 0.5rem 1rem; font-size: 0.82rem; text-decoration: none; transition: background 0.2s; white-space: nowrap; flex-shrink: 0; }
+  .header-cta:hover { background: var(--rose-d); }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #7DDBA8; animation: pulse 2s infinite; flex-shrink: 0; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+
+  .dispo-band { background: var(--text); color: #F5EAF7; text-align: center; padding: 0.65rem 1rem; font-size: 0.8rem; line-height: 1.5; }
+  .dispo-band strong { color: #E8AEDE; }
+
+  /* HERO */
+  .hero-photo { max-width: 640px; margin: 0 auto 0; padding: 0 1.25rem; }
+  .hero-photo img { width: 100%; border-radius: 20px; object-fit: cover; max-height: 420px; display: block; }
+  @media (max-width: 480px) { .hero-photo img { border-radius: 14px; max-height: 300px; } }
+  .hero { max-width: 640px; margin: 0 auto; padding: 3rem 1.25rem 1.5rem; text-align: center; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 8vw, 3.4rem); font-weight: 300; line-height: 1.18; margin-bottom: 1.2rem; }
+  .hero h1 em { font-style: italic; color: var(--rose); }
+  .hero p { font-size: 0.97rem; color: var(--muted); line-height: 1.75; }
+
+  /* RDV */
+  .rdv-zone { max-width: 520px; margin: 2rem auto; padding: 0 1.25rem; display: flex; flex-direction: column; gap: 1rem; }
+  .rdv-main { background: #fff; border: 1px solid var(--beige-d); border-radius: 20px; padding: 1.8rem 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.55rem; }
+  .rdv-tag { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .rdv-btn { margin-top: 0.4rem; background: var(--rose); color: #fff; font-size: 0.97rem; padding: 0.8rem 1.8rem; border-radius: 40px; text-decoration: none; display: inline-block; transition: background 0.2s; }
+  .rdv-btn:hover { background: var(--rose-d); }
+  .rdv-sub { font-size: 0.76rem; color: var(--muted); }
+  .phone-display { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--muted); letter-spacing: 0.04em; }
+  .phone-note { font-size: 0.74rem; color: var(--muted); font-style: italic; }
+  .rdv-urgent { background: var(--rose-l); border: 1px solid var(--beige-d); border-radius: 14px; padding: 1rem 1.3rem; display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; flex-wrap: wrap; }
+  .rdv-urgent-label { font-size: 0.83rem; color: var(--rose-d); }
+  .rdv-urgent-label strong { display: block; font-size: 0.76rem; font-weight: 400; color: var(--muted); margin-top: 0.1rem; }
+  .rdv-urgent a { background: #fff; color: var(--rose-d); border: 1px solid var(--rose); border-radius: 40px; padding: 0.45rem 1.1rem; font-size: 0.8rem; text-decoration: none; white-space: nowrap; }
+  .rdv-urgent a:hover { background: var(--rose-l); }
+  .rdv-urgent-email-btn { background: transparent !important; color: var(--muted) !important; border: 1px solid var(--beige-d) !important; border-radius: 40px; padding: 0.4rem 1rem; font-size: 0.76rem; text-decoration: none; white-space: nowrap; }
+
+  hr.div { border: none; border-top: 1px solid var(--beige-d); max-width: 860px; margin: 0 auto; }
+  section { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; margin-bottom: 0.3rem; }
+  .section-sub { color: var(--muted); font-size: 0.86rem; margin-bottom: 1.4rem; }
+
+  /* FORMULES */
+  .formules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.9rem; }
+  .formule-card { background: #fff; border: 1px solid var(--beige-d); border-radius: 16px; padding: 1.3rem 1.2rem; display: flex; flex-direction: column; gap: 0.35rem; transition: border-color 0.2s; position: relative; }
+  .formule-card:hover { border-color: var(--rose); }
+  .formule-card.vip { border: 2px solid var(--rose); }
+  .vip-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--rose); color: #fff; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.8rem; border-radius: 40px; white-space: nowrap; }
+  .formule-duration { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 300; color: var(--rose); }
+  .formule-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; }
+  .formule-desc { font-size: 0.77rem; color: var(--muted); line-height: 1.55; margin-top: 0.15rem; }
+  .formule-note { font-size: 0.71rem; color: var(--rose-d); font-style: italic; margin-top: 0.25rem; }
+
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.8rem; }
+  @media (max-width: 860px) { .services-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 560px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 380px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  .service-card { background: #fff; border: 1px solid var(--beige-d); border-radius: 14px; padding: 1.3rem 1rem; transition: border-color 0.2s, transform 0.2s; text-align: center; }
+  .service-card:hover { border-color: var(--rose); transform: translateY(-2px); }
+  .service-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .service-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; }
+  .service-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.5; }
+
+  /* POUR QUI */
+  .questions { max-width: 680px; margin: 0 auto; padding: 0 1.25rem 2rem; }
+  .questions-title { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 300; text-align: center; margin-bottom: 1.2rem; color: var(--muted); }
+  .questions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.65rem; }
+  .q-card { background: #fff; border: 1px solid var(--beige-d); border-radius: 12px; padding: 0.85rem 0.95rem; font-size: 0.86rem; line-height: 1.5; display: flex; align-items: flex-start; gap: 0.55rem; }
+  .q-card span { color: var(--rose); flex-shrink: 0; margin-top: 1px; }
+
+  /* À PROPOS — section "Qui suis-je" */
+  .apropos { background: linear-gradient(135deg, var(--rose-l) 0%, #fff 60%); padding: 2.5rem 1.25rem; }
+  .apropos-inner { max-width: 860px; margin: 0 auto; }
+  .apropos-title { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; margin-bottom: 0.3rem; }
+  .apropos-sub { color: var(--muted); font-size: 0.86rem; margin-bottom: 1.8rem; }
+  .apropos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 600px) { .apropos-grid { grid-template-columns: 1fr; } }
+  .apropos-card { background: #fff; border: 1px solid var(--beige-d); border-radius: 16px; padding: 1.3rem 1.2rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .apropos-card-icon { font-size: 1.4rem; }
+  .apropos-card-label { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--rose-d); }
+  .apropos-card-text { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+  .apropos-intro { font-size: 0.95rem; line-height: 1.75; color: var(--text); margin-bottom: 1.4rem; max-width: 700px; }
+  .apropos-intro strong { color: var(--rose-d); font-weight: 400; }
+  .diplomes { margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .diplome-tag { background: var(--rose-l); color: var(--rose-d); border-radius: 40px; padding: 0.3rem 0.85rem; font-size: 0.73rem; letter-spacing: 0.04em; }
+
+  /* AVIS */
+  .avis-section { background: var(--rose-l); padding: 2.5rem 1.25rem; }
+  .avis-inner { max-width: 860px; margin: 0 auto; }
+  .avis-title { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; margin-bottom: 0.3rem; }
+  .avis-sub { color: var(--muted); font-size: 0.86rem; margin-bottom: 1.4rem; }
+  .avis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.85rem; }
+  .avis-card { background: #fff; border-radius: 14px; padding: 1.1rem 1.2rem; border: 1px solid var(--beige-d); display: flex; flex-direction: column; gap: 0.45rem; }
+  .avis-stars { color: var(--rose); font-size: 0.82rem; letter-spacing: 2px; }
+  .avis-text { font-size: 0.81rem; line-height: 1.65; color: var(--text); font-style: italic; }
+  .avis-name { font-size: 0.72rem; color: var(--muted); }
+
+  /* CITATION */
+  .citation { max-width: 680px; margin: 2rem auto; padding: 0 1.25rem; }
+  .citation blockquote { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--rose-d); border-left: 2px solid var(--rose); padding-left: 1.1rem; line-height: 1.6; }
+
+  /* COMMENT ÇA SE PASSE */
+  .how { background: var(--text); padding: 2.5rem 1.25rem; text-align: center; }
+  .how h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--beige); margin-bottom: 1.4rem; }
+  .how-steps { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.6rem; }
+  .how-step { display: flex; align-items: baseline; gap: 1rem; color: #EDE5F0; font-size: 0.88rem; line-height: 1.55; text-align: left; }
+  .how-step-num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #E8AEDE; flex-shrink: 0; width: 1.5rem; }
+
+  /* APPEL À L'ACTION FINAL */
+  .cta-final { max-width: 680px; margin: 0 auto; padding: 3rem 1.25rem; text-align: center; }
+  .cta-final-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--rose-d); margin-bottom: 1rem; line-height: 1.4; }
+  .cta-final-text { font-size: 0.92rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
+  .cta-final-btn { background: var(--rose); color: #fff; font-size: 1rem; padding: 0.9rem 2rem; border-radius: 40px; text-decoration: none; display: inline-block; transition: background 0.2s; }
+  .cta-final-btn:hover { background: var(--rose-d); }
+
+  footer { text-align: center; padding: 1.5rem 1rem; font-size: 0.73rem; color: var(--muted); border-top: 1px solid var(--beige-d); line-height: 1.8; }
+  footer a { color: var(--muted); }
+
+  /* MOBILE OVERRIDES */
+  @media (max-width: 480px) {
+    .hero { padding: 2.2rem 1.1rem 1.2rem; }
+    .rdv-zone { padding: 0 1rem; }
+    .rdv-main { padding: 1.5rem 1.1rem; }
+    .formules-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .questions-grid { grid-template-columns: 1fr; }
+    .avis-grid { grid-template-columns: 1fr; }
+    .apropos-grid { grid-template-columns: 1fr; }
+    section { padding: 1.8rem 1.1rem; }
+    .apropos { padding: 2rem 1.1rem; }
+    .avis-section { padding: 2rem 1.1rem; }
+    .how { padding: 2rem 1.1rem; }
+    .cta-final { padding: 2.5rem 1.1rem; }
+    .rdv-urgent { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="header-name">Julie Lobel</span>
+  <a href="https://www.resalib.fr/praticien/120874-julie-professeur-de-yoga-perpignan#newrdvmodal" class="header-cta">
+    <span class="dot"></span> Prendre rendez-vous
+  </a>
+</header>
+
+<div class="dispo-band">
+  Consultations en ligne · <strong>visio & téléphone</strong> · 15 min · 30 min · 1h
+</div>
+
+<div class="hero">
+  <div style="width:130px; height:130px; border-radius:50%; overflow:hidden; border: 2px solid var(--beige-d); margin:0 auto 1.2rem;">
+    <img src="julie.png" alt="Julie Lobel" style="width:100%; height:100%; object-fit:cover; object-position:center top; transform:translateY(-12%); display:block;">
+  </div>
+  <h1>Tu as besoin<br>d'un <em>regard clair</em><br>sur ta situation ?</h1>
+  <p>Prends rendez-vous. On parle. Je lis ce qui se passe et je t'oriente — directement, sans détour.</p>
+</div>
+
+
+<div class="rdv-zone">
+  <div class="rdv-main">
+    <span class="rdv-tag">Réserver une consultation</span>
+    <a class="rdv-btn" href="https://www.resalib.fr/praticien/120874-julie-professeur-de-yoga-perpignan#newrdvmodal">Choisir un créneau →</a>
+    <span class="rdv-sub">En visio ou par téléphone · depuis chez toi, où que tu sois</span>
+    <span class="phone-display">04 68 09 65 18</span>
+    <span class="phone-note">Numéro à utiliser à l'heure de ton rendez-vous</span>
+  </div>
+  <div class="rdv-urgent">
+    <div class="rdv-urgent-label">
+      Besoin plus urgent ?
+      <strong>Écris-moi directement</strong>
+    </div>
+    <a href="mailto:julielobel.coaching@gmail.com" class="rdv-urgent-email-btn">✉ Par email</a>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- FORMULES -->
+<section>
+  <p class="section-title">Les formules</p>
+  <p class="section-sub">Chaque durée correspond à un niveau d'intervention différent.</p>
+  <div class="formules-grid">
+
+    <div class="formule-card">
+      <div class="formule-duration">15 min</div>
+      <div class="formule-name">Bilan éclair</div>
+      <div style="display:inline-block; background:var(--rose); color:#fff; border-radius:40px; padding:0.25rem 0.9rem; font-size:1rem; margin:0.3rem 0; letter-spacing:0.02em;">35€</div>
+      <div class="formule-desc">Je lis ta situation, je cerne ce qui se passe vraiment et je t'indique ce qu'il faut faire. Comme une IA mais avec la connaissance fine de l'architecture du soi — psychologique, physique, énergétique.</div>
+      <div class="formule-note">Idéal pour un point précis, une décision à prendre, un blocage à identifier.</div>
+    </div>
+
+    <div class="formule-card">
+      <div class="formule-duration">30 min</div>
+      <div class="formule-name">Consultation approfondie</div>
+      <div style="display:inline-block; background:var(--rose); color:#fff; border-radius:40px; padding:0.25rem 0.9rem; font-size:1rem; margin:0.3rem 0; letter-spacing:0.02em;">50€</div>
+      <div class="formule-desc">On va plus loin dans l'analyse. Je traite les données de ta situation, je t'oriente et on explore ensemble les pistes concrètes pour avancer.</div>
+      <div class="formule-note">Pour une situation plus complexe ou une première approche de travail.</div>
+    </div>
+
+    <div class="formule-card">
+      <div class="formule-duration">1 heure</div>
+      <div class="formule-name">Séance complète</div>
+      <div style="display:inline-block; background:var(--rose); color:#fff; border-radius:40px; padding:0.25rem 0.9rem; font-size:1rem; margin:0.3rem 0; letter-spacing:0.02em;">100€</div>
+      <div class="formule-desc">Analyse + orientation + travail. On utilise les outils adaptés à ce que tu traverses — EFT, breathwork, hypnose, scan matrice, coaching.</div>
+      <div class="formule-note">Pour un travail de fond, une transformation en profondeur. + mail de suivi inclus.<br>Possibilité de pack séances à prix réduit.</div>
+    </div>
+
+    <div class="formule-card vip">
+      <div class="vip-badge">VIP</div>
+      <div class="formule-duration">Intensif</div>
+      <div class="formule-name">Mois de transformation</div>
+      <div style="display:inline-block; background:var(--rose); color:#fff; border-radius:40px; padding:0.25rem 0.9rem; font-size:1rem; margin:0.3rem 0; letter-spacing:0.02em;">500€</div>
+      <div class="formule-desc">Un accompagnement immersif sur un mois. Accès privilégié, disponibilité étendue, travail en profondeur sur tous les niveaux — subconscient, corps, énergie, vie concrète.</div>
+      <div class="formule-note">Pour une transformation rapide et radicale.</div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- SERVICES -->
+<section>
+  <p class="section-title">Ce que je propose</p>
+  <p class="section-sub">Les outils varient selon la durée et ce que tu traverses.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🔮</div>
+      <div class="service-name">Scan Matrice</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💬</div>
+      <div class="service-name">Coaching</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🧘</div>
+      <div class="service-name">Yoga</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌬️</div>
+      <div class="service-name">Breathwork</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🖐️</div>
+      <div class="service-name">EFT</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <div class="service-name">Hypnose</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌿</div>
+      <div class="service-name">Conseils</div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- POUR QUI -->
+<div class="questions">
+  <p class="questions-title">On prend rendez-vous quand…</p>
+  <div class="questions-grid">
+    <div class="q-card"><span>→</span> On a besoin de parler et d'être soutenu·e efficacement</div>
+    <div class="q-card"><span>→</span> On a besoin de dégager quelque chose qui plombe</div>
+    <div class="q-card"><span>→</span> On veut être orienté·e clairement pour sortir de ses souffrances</div>
+    <div class="q-card"><span>→</span> On veut comprendre ce que l'on vit vraiment</div>
+    <div class="q-card"><span>→</span> On veut trouver une voie — et la voix qui va avec</div>
+    <div class="q-card"><span>→</span> On veut apprendre des techniques qui soulagent et permettent d'avancer</div>
+  </div>
+</div>
+
+<div class="citation">
+  <blockquote>« Je ne te dis pas ce que tu veux entendre. Je te dis ce que je vois — pour que tu puisses avancer. »</blockquote>
+</div>
+
+<!-- AVIS -->
+<div class="avis-section">
+  <div class="avis-inner">
+    <p class="avis-title">Ils l'ont vécu</p>
+    <p class="avis-sub">Témoignages authentiques de personnes accompagnées</p>
+    <div class="avis-grid">
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Julie est très efficace dans son travail ! M'a changé la vie ! Elle a pu trouver des points de blocages que je ne pouvais atteindre moi-même. Je la recommande fortement ! »</div>
+        <div class="avis-name">Yolanda</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Mes douleurs aux jambes devenues un handicap ont disparu. Elle est unique — dès le premier contact j'ai été subjugué par son analyse. Allez-y les yeux fermés. »</div>
+        <div class="avis-name">Wilton</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Cet accompagnement avec Julie est une bénédiction… Elle a réussi à me réconcilier avec moi-même. »</div>
+        <div class="avis-name">Anissa</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« En quelques mois, j'ai retrouvé le calme en moi, réglé bon nombre de conflits intérieurs, et j'ai enfin réussi à perdre du poids. Julie, vous avez été ce maillon qui m'a permis de remettre de l'ordre dans ma vie. »</div>
+        <div class="avis-name">Marie Rose</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« La dépression est dépassée. J'ai l'impression d'avoir été libérée d'un poids, d'être réalignée, en phase avec moi-même. »</div>
+        <div class="avis-name">Annelyse</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Grâce aux séances avec Julie, j'ai réussi à me détacher complètement de mes angoisses. Et mes migraines qui me faisaient souffrir depuis des années ont totalement disparu. »</div>
+        <div class="avis-name">Virginie</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Julie m'a soulagé d'eczéma sur les mains — elle a compris l'origine non-dite et m'a fait extérioriser certaines choses. Mon corps a pu s'apaiser. Merci. »</div>
+        <div class="avis-name">M. de B.</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« A réussi à m'enlever des douleurs que les médecins n'avaient jamais pu. »</div>
+        <div class="avis-name">Barbara</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Julie, tu travailles de façon douce et profonde, ton approche va directement à la cause des blocages. »</div>
+        <div class="avis-name">Petronilla</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Je peux maintenant mieux communiquer, je me sens enfin sûre de moi, plus forte et… plus heureuse. »</div>
+        <div class="avis-name">Catherine</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Merci pour votre précieuse aide qui m'a aidée à avancer. »</div>
+        <div class="avis-name">Corinne</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Julie m'a aidé à avancer sur des étapes bloquantes de ma vie, ce qui m'a permis de changer ma façon de voir les choses, au niveau relationnel notamment. »</div>
+        <div class="avis-name">Esteban</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« J'ai arrêté de fumer pendant le suivi, naturellement ! »</div>
+        <div class="avis-name">J.W.</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« J'ai aujourd'hui réalisé mon rêve : j'ai fondé une famille ! Je suis très reconnaissante de ce beau travail. »</div>
+        <div class="avis-name">K.M.</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« J'ai beaucoup apprécié son professionnalisme et sa manière d'interagir avec ma fille, ce qui lui a enfin permis de relever la tête là où tous les autres avaient échoué. »</div>
+        <div class="avis-name">Parent d'élève</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Sa plus grande force réside dans sa capacité à redonner confiance. Son accompagnement est toujours fait avec bienveillance et intelligence. »</div>
+        <div class="avis-name">Enquête professionnelle 2025</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Grande clairvoyance. Dynamisme et innovation. Sa facilité d'analyse des humains et de les comprendre. Brillante et inoubliable. »</div>
+        <div class="avis-name">Enquête professionnelle 2025</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Elle sait mettre les gens à l'aise, trouver les bons mots et donner des conseils qui font vraiment avancer. Elle a un talent pour manier les phrases avec justesse, apaiser les tensions et aider chacun à voir les choses sous un nouvel angle. »</div>
+        <div class="avis-name">Enquête professionnelle 2025</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Sa lucidité, sa vision, sa compréhension des rapports humains, sa volonté d'aboutir dans la recherche méticuleuse de la solution au problème sans précipiter. »</div>
+        <div class="avis-name">Enquête professionnelle 2025</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« En montrant l'exemple, elle apporte du courage pour évoluer en dehors de ses zones de confort. Son art de vivre le moment présent, sa confiance en la vie, ses connexions spirituelles. »</div>
+        <div class="avis-name">Enquête professionnelle 2025</div>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <div class="avis-text">« Un nouvel horizon se dessine. J'ai tout changé : sauvé mon mariage, changé de maison, de boulot, de continent ! J'étais tellement bloquée et malheureuse. »</div>
+        <div class="avis-name">Virginie</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- MON EXPÉRIENCE -->
+<div class="apropos">
+  <div class="apropos-inner">
+    <p class="apropos-title">Mon expérience</p>
+    <div class="diplomes">
+      <span class="diplome-tag">Panthéon-Sorbonne</span>
+      <span class="diplome-tag">Psychologie & Psychanalyse</span>
+      <span class="diplome-tag">Arts & Philosophie</span>
+      <span class="diplome-tag">Hypnose régressive</span>
+      <span class="diplome-tag">Sophrologie</span>
+      <span class="diplome-tag">Yoga</span>
+      <span class="diplome-tag">Yoga Nidra</span>
+      <span class="diplome-tag">Méditation</span>
+      <span class="diplome-tag">Tantra</span>
+      <span class="diplome-tag">Travail des ombres</span>
+      <span class="diplome-tag">Aura</span>
+      <span class="diplome-tag">Chakras & Kundalini</span>
+      <span class="diplome-tag">Énergie</span>
+      <span class="diplome-tag">Breathwork</span>
+      <span class="diplome-tag">EFT</span>
+      <span class="diplome-tag">Biorésonance</span>
+      <span class="diplome-tag">Coaching professionnel certifié</span>
+      <span class="diplome-tag">Radiesthésie & Énergétique</span>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- COMMENT ÇA SE PASSE -->
+<div class="how">
+  <h2>Comment ça se passe</h2>
+  <div class="how-steps">
+    <div class="how-step"><span class="how-step-num">1</span> Tu réserves un créneau en ligne via Resalib.</div>
+    <div class="how-step"><span class="how-step-num">2</span> À l'heure du rendez-vous, tu appelles le 04 68 09 65 18.</div>
+    <div class="how-step"><span class="how-step-num">3</span> Tu m'expliques ta situation — je lis ce qui se passe et je t'oriente clairement.</div>
+    <div class="how-step"><span class="how-step-num">4</span> Si tu veux aller plus loin, on peut travailler ensemble. C'est toi qui décides.</div>
+  </div>
+</div>
+
+<!-- CTA FINAL -->
+<div class="cta-final">
+  <p class="cta-final-title">Pour sortir de ce qui vous fait souffrir, vous cherchez plus qu'un suivi psy, plus qu'un cours de yoga ?</p>
+  <p class="cta-final-text">Vous cherchez autre chose ? Offrez-vous un chemin différent. Initiez-vous à des savoirs qui transformeront votre vision de vous-même, des autres et du monde.</p>
+  <a class="cta-final-btn" href="mailto:julielobel.coaching@gmail.com">Je suis disponible →</a>
+</div>
+
+<div style="max-width:860px; margin:0 auto; padding: 1.8rem 1.25rem; border-top: 1px solid var(--beige-d); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+  <img src="20260419_135601.jpg" alt="Accessoires yoga Julie Lobel — Perpignan" style="width:110px; height:110px; border-radius:14px; object-fit:cover; flex-shrink:0; border: 1px solid var(--beige-d);">
+  <div>
+    <p style="font-size:0.78rem; color:var(--muted); margin-bottom:0.4rem;">Cours particuliers de yoga à Perpignan</p>
+    <a href="https://www.superprof.fr/professeur-yoga-jaide-maitriser-systemes-internes-subconscient-corps-energie-prana-influer.html" style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--rose-d); text-decoration:none; border-bottom: 1px solid var(--beige-d);" target="_blank" rel="noopener">Julie — Prof de yoga à Perpignan · 45€/h →</a>
+  </div>
+</div>
+
+<footer>
+  Julie Lobel · Professeure de yoga · Coach<br>
+  Consultations en ligne · visio & téléphone<br>
+  Interventions in situ & cours VIP à <strong>Perpignan</strong> sur demande<br>
+  <a href="mailto:julielobel.coaching@gmail.com">julielobel.coaching@gmail.com</a><br>
+  Julie Lobel ©2026 · SIRET 813 800 398 00048 · APE 8690F
+</footer>
+
+</body>
+</html>
